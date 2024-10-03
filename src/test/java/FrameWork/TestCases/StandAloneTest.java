@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import FrameWork.PageObjects.CartPage;
 import FrameWork.PageObjects.CheckOutPage;
 import FrameWork.PageObjects.HomePage;
-import FrameWork.PageObjects.LandingPage;
 import FrameWork.PageObjects.OrderSuccessPage;
 import FrameWork.TestComponents.BaseTest;
 
@@ -16,14 +15,13 @@ public class StandAloneTest extends BaseTest {
 	@Test
 	public void submitOrder() throws IOException {
 
-		LandingPage landingPage = launchApplication();
-		HomePage homePage = landingPage.login();
+		HomePage homePage = landingPage.login("nikhil.kharb@ymail.com", "Test@123");
 		homePage.getLoginMessage();
 		homePage.getProds();
 		homePage.addToCart("ZARA");
 		CartPage cartPage = homePage.goToCart();
 		Assert.assertTrue(cartPage.verifyProd().equalsIgnoreCase("ZARA COAT 3"));
-		CheckOutPage chkoutPage =cartPage.checkOut();
+		CheckOutPage chkoutPage = cartPage.checkOut();
 		chkoutPage.enterCountry("Ind");
 		chkoutPage.selectCountry("India");
 		OrderSuccessPage cnfordrPage = chkoutPage.placeOrder();

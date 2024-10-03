@@ -26,9 +26,9 @@ public class LandingPage extends AbstractClass {
 	@FindBy(css = ".login-btn")
 	WebElement loginButton;
 
-	public HomePage login() {
-		userEmail.sendKeys("nikhil.kharb@ymail.com");
-		userPassword.sendKeys("Test@123");
+	public HomePage login(String email,String pass) {
+		userEmail.sendKeys(email);
+		userPassword.sendKeys(pass);
 		loginButton.click();
 		HomePage homePage = new HomePage(driver);
 		return homePage;

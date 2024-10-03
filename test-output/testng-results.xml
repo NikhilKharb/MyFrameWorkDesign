@@ -1,17 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-02T18:23:04 IST" name="Default suite" finished-at="2024-10-02T18:23:14 IST" duration-ms="9751">
+  <suite started-at="2024-10-03T09:35:39 IST" name="Suite" finished-at="2024-10-03T09:35:51 IST" duration-ms="12065">
     <groups>
     </groups>
-    <test started-at="2024-10-02T18:23:04 IST" name="Default test" finished-at="2024-10-02T18:23:14 IST" duration-ms="9751">
+    <test started-at="2024-10-03T09:35:39 IST" name="PlaceOrderTest" finished-at="2024-10-03T09:35:49 IST" duration-ms="10236">
       <class name="FrameWork.TestCases.StandAloneTest">
-        <test-method signature="submitOrder()[pri:0, instance:FrameWork.TestCases.StandAloneTest@233795b6]" started-at="2024-10-02T18:23:04 IST" name="submitOrder" finished-at="2024-10-02T18:23:14 IST" duration-ms="9722" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:FrameWork.TestCases.StandAloneTest@15de0b3c]" started-at="2024-10-03T09:35:39 IST" name="launchApplication" finished-at="2024-10-03T09:35:42 IST" duration-ms="2933" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder()[pri:0, instance:FrameWork.TestCases.StandAloneTest@15de0b3c]" started-at="2024-10-03T09:35:42 IST" name="submitOrder" finished-at="2024-10-03T09:35:49 IST" duration-ms="7272" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:FrameWork.TestCases.StandAloneTest@15de0b3c]" started-at="2024-10-03T09:35:49 IST" name="closeBrowser" finished-at="2024-10-03T09:35:49 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- FrameWork.TestCases.StandAloneTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- PlaceOrderTest -->
+    <test started-at="2024-10-03T09:35:39 IST" name="LoginTest" finished-at="2024-10-03T09:35:51 IST" duration-ms="12065">
+      <class name="FrameWork.TestCases.LoginTestCases">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:FrameWork.TestCases.LoginTestCases@58ea606c]" started-at="2024-10-03T09:35:39 IST" name="launchApplication" finished-at="2024-10-03T09:35:41 IST" duration-ms="1938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="logintest_001_valid_creds()[pri:0, instance:FrameWork.TestCases.LoginTestCases@58ea606c]" started-at="2024-10-03T09:35:41 IST" name="logintest_001_valid_creds" finished-at="2024-10-03T09:35:43 IST" duration-ms="1976" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest_001_valid_creds -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:FrameWork.TestCases.LoginTestCases@58ea606c]" started-at="2024-10-03T09:35:43 IST" name="closeBrowser" finished-at="2024-10-03T09:35:43 IST" duration-ms="119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:FrameWork.TestCases.LoginTestCases@58ea606c]" started-at="2024-10-03T09:35:43 IST" name="launchApplication" finished-at="2024-10-03T09:35:44 IST" duration-ms="1292" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="logintest_002_valid_email_invalid_pass()[pri:0, instance:FrameWork.TestCases.LoginTestCases@58ea606c]" started-at="2024-10-03T09:35:44 IST" name="logintest_002_valid_email_invalid_pass" finished-at="2024-10-03T09:35:46 IST" duration-ms="1931" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest_002_valid_email_invalid_pass -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:FrameWork.TestCases.LoginTestCases@58ea606c]" started-at="2024-10-03T09:35:46 IST" name="closeBrowser" finished-at="2024-10-03T09:35:46 IST" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:FrameWork.TestCases.LoginTestCases@58ea606c]" started-at="2024-10-03T09:35:46 IST" name="launchApplication" finished-at="2024-10-03T09:35:49 IST" duration-ms="2570" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="logintest_003_invalid_email_valid_pass()[pri:0, instance:FrameWork.TestCases.LoginTestCases@58ea606c]" started-at="2024-10-03T09:35:49 IST" name="logintest_003_invalid_email_valid_pass" finished-at="2024-10-03T09:35:51 IST" duration-ms="1941" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest_003_invalid_email_valid_pass -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:FrameWork.TestCases.LoginTestCases@58ea606c]" started-at="2024-10-03T09:35:51 IST" name="closeBrowser" finished-at="2024-10-03T09:35:51 IST" duration-ms="159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- FrameWork.TestCases.LoginTestCases -->
+    </test> <!-- LoginTest -->
+  </suite> <!-- Suite -->
 </testng-results>

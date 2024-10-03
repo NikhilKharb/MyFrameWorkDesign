@@ -29,13 +29,12 @@ public class HomePage extends AbstractClass {
 	@FindBy(css = ".mb-3")
 	List<WebElement> prods;
 
-	public void getLoginMessage() {
+	public String getLoginMessage() {
 		waitElementVisibility(toastMessage);
-		System.out.println(message.getText());
+		String fmessage = message.getText();
 		waitElementInvisibility(toastMessage);
-
+		return fmessage;
 	}
-	
 
 	public List<WebElement> getProds() {
 		return prods;
