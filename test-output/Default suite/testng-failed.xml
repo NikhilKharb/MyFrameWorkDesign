@@ -5,7 +5,9 @@
     <classes>
       <class name="FrameWork.TestCases.StandAloneTest">
         <methods>
-          <include name="submitOrder"/>
+          <include name="launchApplication"/>
+          <include name="submitOrder" invocation-numbers="0 1"/>
+          <include name="closeBrowser"/>
         </methods>
       </class> <!-- FrameWork.TestCases.StandAloneTest -->
     </classes>

@@ -31,10 +31,11 @@ public class OrderSuccessPage extends AbstractClass {
 		return message;
 	}
 
-	public void getToastMessage() {
+	public String getToastMessage() {
 		waitElementVisibility(toastMessage);
-		System.out.println(message.getText());
+		String fmessage=message.getText();
 		waitElementInvisibility(toastMessage);
+		return fmessage;
 	}
 
 }

@@ -47,12 +47,11 @@ public class HomePage extends AbstractClass {
 		return product;
 	}
 
-	public void addToCart(String prodName) {
+	public String addToCart(String prodName) {
 		WebElement product = getProdsByName(prodName);
 		product.findElement(By.cssSelector(".btn.w-10.rounded")).click();
 		waitElementVisibility(toastMessage);
-		System.out.println(message.getText());
-		waitElementInvisibility(toastMessage);
+		return message.getText();
 
 	}
 
