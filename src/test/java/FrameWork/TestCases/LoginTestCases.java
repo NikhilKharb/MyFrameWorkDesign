@@ -11,6 +11,8 @@ import org.testng.annotations.Test;
 
 import FrameWork.PageObjects.HomePage;
 import FrameWork.PageObjects.LandingPage;
+import FrameWork.TestComponents.Retry;
+
 import FrameWork.TestComponents.BaseTest;
 
 public class LoginTestCases extends BaseTest {
@@ -24,14 +26,11 @@ public class LoginTestCases extends BaseTest {
 //
 //	}
 
-	@Test(groups = { "negative" }, dataProvider = "getloginData")
+	@Test(groups = { "negative" }, retryAnalyzer = Retry.class, dataProvider = "getloginData")
 	public void logintest_002_valid_email_invalid_pass(HashMap<String, String> input) throws IOException {
-
 		HomePage homePage = landingPage.login(input.get("email"), input.get("password"));
 		String message = homePage.getLoginMessage();
-		Assert.assertEquals(input.get("message"),message);
-		System.out.println(input.get("type"));
-
+		Assert.assertEquals(message, input.get("message"));
 	}
 
 //	@Test(groups= {"negative"},dataProvider = "getDataMap")
@@ -50,6 +49,5 @@ public class LoginTestCases extends BaseTest {
 
 		return new Object[][] { { data.get(0) }, { data.get(1) } };
 	}
-	
 
 }

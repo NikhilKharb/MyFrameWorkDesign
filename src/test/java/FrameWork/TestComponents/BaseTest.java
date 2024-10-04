@@ -13,6 +13,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -33,12 +35,22 @@ public class BaseTest {
 				System.getProperty("user.dir") + "\\src\\test\\java\\FrameWork\\resources\\GlobalData.properties");
 
 		prop.load(fis);
-		String browser = prop.getProperty("browser");
+
+		String browser = System.getProperty("browser") != null ? System.getProperty("browser")
+				: prop.getProperty("browser");
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 
 			driver = new ChromeDriver();
+		}if (browser.equalsIgnoreCase("firefox")) {
+			WebDriverManager.chromedriver().setup();
+
+			driver = new FirefoxDriver();
+		}if (browser.equalsIgnoreCase("edge")) {
+			WebDriverManager.chromedriver().setup();
+
+			driver = new EdgeDriver();
 		}
 
 		driver.manage().window().maximize();
@@ -71,7 +83,7 @@ public class BaseTest {
 		return data;
 	}
 
-	public String takeScreenshot(String testCaseName,WebDriver driver) throws IOException {
+	public String takeScreenshot(String testCaseName, WebDriver driver) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File screenshot = ts.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(screenshot,
