@@ -43,11 +43,13 @@ public class BaseTest {
 			WebDriverManager.chromedriver().setup();
 
 			driver = new ChromeDriver();
-		}if (browser.equalsIgnoreCase("firefox")) {
+		}
+		if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.chromedriver().setup();
 
 			driver = new FirefoxDriver();
-		}if (browser.equalsIgnoreCase("edge")) {
+		}
+		if (browser.equalsIgnoreCase("edge")) {
 			WebDriverManager.chromedriver().setup();
 
 			driver = new EdgeDriver();
