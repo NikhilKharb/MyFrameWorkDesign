@@ -17,6 +17,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -91,6 +92,15 @@ public class BaseTest {
 		FileUtils.copyFile(screenshot,
 				new File(System.getProperty("user.dir") + "\\screenshots/" + testCaseName + ".png"));
 		return System.getProperty("user.dir") + "\\screenshots/" + testCaseName + ".png";
+	}
+
+	@DataProvider
+	public Object[][] getloginDataFromJSON() throws IOException {
+		List<HashMap<String, String>> data = getJSONDataToMap(System.getProperty("user.dir") + File.separator + "src"
+				+ File.separator + "test" + File.separator + "java" + File.separator + "FrameWork" + File.separator
+				+ "TestData" + File.separator + "LoginDataValidation.json");
+
+		return new Object[][] { { data.get(0) }, { data.get(1) } };
 	}
 
 	@BeforeMethod(alwaysRun = true)

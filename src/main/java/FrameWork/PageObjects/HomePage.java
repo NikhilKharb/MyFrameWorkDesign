@@ -26,8 +26,15 @@ public class HomePage extends AbstractClass {
 	@FindBy(css = "#toast-container")
 	WebElement message;
 
+	@FindBy(xpath = "(//button[@class='btn btn-custom'])[4]")
+	WebElement logOutBtn;
+
 	@FindBy(css = ".mb-3")
 	List<WebElement> prods;
+
+	public void logOut() {
+		logOutBtn.click();
+	}
 
 	public String getLoginMessage() {
 		waitElementVisibility(toastMessage);

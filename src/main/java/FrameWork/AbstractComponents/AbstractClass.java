@@ -16,25 +16,29 @@ public class AbstractClass {
 	WebDriver driver;
 
 	public AbstractClass(WebDriver driver) {
-		this.driver=driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	@FindBy(xpath = "//button[@routerlink='/dashboard/cart']")
 	WebElement cartButton;
 	
+
 	public CartPage goToCart() {
 		cartButton.click();
-		CartPage cartPage=new CartPage(driver);
+		CartPage cartPage = new CartPage(driver);
 		return cartPage;
 	}
+
+	
 
 	public void waitElementVisibility(By findBy) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 
 	}
+
 	public void waitElementInvisibility(By findBy) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(findBy));
